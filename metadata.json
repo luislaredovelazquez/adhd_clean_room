@@ -1,0 +1,6 @@
+{
+  "name": "NEURO//CLEAN - ADHD Room Task Decomposer",
+  "description": "Accessible cyberpunk executive function assistant that turns overwhelming messy room photos into tiny, dopamine-friendly micro-steps with built-in timers and focus mode.",
+  "requestFramePermissions": ["camera"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

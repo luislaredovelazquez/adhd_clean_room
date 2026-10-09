@@ -1,0 +1,105 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: #08090e;
+    color: #f1f5f9;
+  }
+}
+
+/* High Contrast Mode for WCAG 2.1 AAA Accessibility */
+[data-contrast="high"] {
+  --canvas-bg: #000000;
+  --surface-bg: #050505;
+  --border-color: #ffff00;
+  --text-primary: #ffffff;
+  --text-secondary: #ffffff;
+  --accent-cyan: #00ffff;
+  --accent-yellow: #ffff00;
+}
+
+[data-contrast="high"] body,
+[data-contrast="high"] .app-container {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+}
+
+[data-contrast="high"] .contrast-border {
+  border: 2px solid #ffff00 !important;
+}
+
+[data-contrast="high"] .contrast-card {
+  background-color: #0a0a0a !important;
+  border: 2px solid #ffffff !important;
+  box-shadow: none !important;
+}
+
+[data-contrast="high"] .contrast-accent-text {
+  color: #ffff00 !important;
+  text-shadow: none !important;
+}
+
+[data-contrast="high"] .contrast-cyan-text {
+  color: #00ffff !important;
+  text-shadow: none !important;
+}
+
+[data-contrast="high"] .contrast-button-primary {
+  background-color: #ffff00 !important;
+  color: #000000 !important;
+  font-weight: 800 !important;
+  border: 2px solid #ffffff !important;
+}
+
+[data-contrast="high"] .contrast-button-secondary {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+  border: 2px solid #ffffff !important;
+}
+
+/* Accessible focus ring indicators for WCAG 2.1 Focus Visible requirement */
+:focus-visible {
+  outline: 3px solid #00f0ff !important;
+  outline-offset: 3px !important;
+}
+
+[data-contrast="high"] :focus-visible {
+  outline: 4px solid #ffff00 !important;
+  outline-offset: 3px !important;
+}
+
+/* Reduced motion preference override */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+[data-motion="reduced"] *,
+[data-motion="reduced"] *::before,
+[data-motion="reduced"] *::after {
+  animation: none !important;
+  transition: none !important;
+}
+
+/* Subtle cyberpunk grid backdrop */
+.cyber-grid {
+  background-size: 32px 32px;
+  background-image: 
+    linear-gradient(to right, rgba(0, 240, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 240, 255, 0.03) 1px, transparent 1px);
+}
+
+[data-contrast="high"] .cyber-grid {
+  background-image: none !important;
+}
+
